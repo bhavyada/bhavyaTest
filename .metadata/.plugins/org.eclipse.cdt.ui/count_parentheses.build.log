@@ -1,0 +1,7 @@
+12:51:15 **** Incremental Build of configuration Debug for project count_parentheses ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\count_parentheses.o" "..\\src\\count_parentheses.cpp" 
+g++ -o count_parentheses.exe "src\\count_parentheses.o" 
+
+12:51:17 Build Finished (took 1s.670ms)
+

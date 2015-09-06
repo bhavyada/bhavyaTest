@@ -1,0 +1,7 @@
+17:31:16 **** Rebuild of configuration Debug for project BitMapOffset ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\BitMapOffset.o" "..\\src\\BitMapOffset.cpp" 
+g++ -o BitMapOffset.exe "src\\BitMapOffset.o" 
+
+17:31:17 Build Finished (took 1s.249ms)
+

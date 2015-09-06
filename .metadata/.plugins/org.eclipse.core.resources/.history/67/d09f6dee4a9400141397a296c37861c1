@@ -1,0 +1,42 @@
+/*
+ ============================================================================
+ Name        : CopyList.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int CopyList(struct node* head)
+{
+	struct node* current = head;
+	struct node* tail = NULL;
+
+	while (current != NULL){
+		if (newList == NULL){
+			struct node* newList = (struct node*)malloc(sizeof(struct node));
+			newList -> data = current -> data;
+			newList -> next = NULL;
+			tail ->next = newList;
+		}
+		else
+		{
+			tail->next = malloc(sizeof(struct node));
+			tail = tail->next;
+			tail ->data = current ->data;
+			tail ->next = NULL;
+
+		}
+
+
+}
+
+
+
+int main(void) {
+	CopyList();
+}

@@ -1,0 +1,5 @@
+Info: Nothing to build for rotate integer
+14:42:49 **** Incremental Build of configuration Debug for project rotate integer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\rotate integer.o" "..\\src\\rotate integer.c" 
+gcc -o "rotate integer.exe" "src\\rotate integer.o" 

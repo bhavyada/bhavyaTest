@@ -1,0 +1,48 @@
+10:10:28 **** Incremental Build of configuration Debug for project median ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\median.o" "..\\src\\median.cpp" 
+..\src\median.cpp: In function 'int select(int*, int, int, int)':
+..\src\median.cpp:8:18: error: 'sort' was not declared in this scope
+     sort(a+s, a+e);
+                  ^
+..\src\median.cpp:8:18: note: suggested alternative:
+In file included from c:\softwareinstalls\gcc\include\c++\4.9.0\algorithm:62:0,
+                 from ..\src\median.cpp:2:
+c:\softwareinstalls\gcc\include\c++\4.9.0\bits\stl_algo.h:4696:5: note:   'std::sort'
+     sort(_RandomAccessIterator __first, _RandomAccessIterator __last,
+     ^
+..\src\median.cpp:19:25: error: 'swap' was not declared in this scope
+     swap(a[median], a[i]);
+                         ^
+..\src\median.cpp:19:25: note: suggested alternative:
+In file included from c:\softwareinstalls\gcc\include\c++\4.9.0\string:52:0,
+                 from c:\softwareinstalls\gcc\include\c++\4.9.0\bits\locale_classes.h:40,
+                 from c:\softwareinstalls\gcc\include\c++\4.9.0\bits\ios_base.h:41,
+                 from c:\softwareinstalls\gcc\include\c++\4.9.0\ios:42,
+                 from c:\softwareinstalls\gcc\include\c++\4.9.0\ostream:38,
+                 from c:\softwareinstalls\gcc\include\c++\4.9.0\iostream:39,
+                 from ..\src\median.cpp:1:
+c:\softwareinstalls\gcc\include\c++\4.9.0\bits\basic_string.h:2736:5: note:   'std::swap'
+     swap(basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+..\src\median.cpp: In function 'int main()':
+..\src\median.cpp:29:1: error: 'cout' was not declared in this scope
+ cout<<"Median of Medians: " << a[mom] << endl;
+ ^
+..\src\median.cpp:29:1: note: suggested alternative:
+In file included from ..\src\median.cpp:1:0:
+c:\softwareinstalls\gcc\include\c++\4.9.0\iostream:61:18: note:   'std::cout'
+   extern ostream cout;  /// Linked to standard output
+                  ^
+..\src\median.cpp:29:42: error: 'endl' was not declared in this scope
+ cout<<"Median of Medians: " << a[mom] << endl;
+                                          ^
+..\src\median.cpp:29:42: note: suggested alternative:
+In file included from c:\softwareinstalls\gcc\include\c++\4.9.0\iostream:39:0,
+                 from ..\src\median.cpp:1:
+c:\softwareinstalls\gcc\include\c++\4.9.0\ostream:564:5: note:   'std::endl'
+     endl(basic_ostream<_CharT, _Traits>& __os)
+     ^
+
+10:10:29 Build Finished (took 784ms)
+

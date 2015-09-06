@@ -1,0 +1,8 @@
+23:34:14 **** Incremental Build of configuration Debug for project Merge_two_nodes_singlehead ****
+Info: Internal Builder is used for build
+gcc -o Merge_two_nodes_singlehead.exe "src\\Merge_two_nodes_singlehead.o" 
+c:/softwareinstalls/gcc/bin/../lib/gcc/x86_64-w64-mingw32/4.9.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Merge_two_nodes_singlehead.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+
+23:34:14 Build Finished (took 123ms)
+

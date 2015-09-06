@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;buuble_sort_bhav/src/buuble_sort_bhav.c&apos; to &apos;bucket_sort_bhav.c&apos;" description="Rename resource &apos;buuble_sort_bhav.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/buuble_sort_bhav.c" name="bucket_sort_bhav.c" stamp="1432789909169" updateReferences="true"/>
+</session>

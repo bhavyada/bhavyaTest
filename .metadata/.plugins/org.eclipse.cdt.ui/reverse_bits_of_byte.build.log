@@ -1,0 +1,7 @@
+00:23:23 **** Incremental Build of configuration Debug for project reverse_bits_of_byte ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\reverse_bits_of_byte.o" "..\\src\\reverse_bits_of_byte.c" 
+gcc -o reverse_bits_of_byte.exe "src\\reverse_bits_of_byte.o" 
+
+00:23:23 Build Finished (took 312ms)
+

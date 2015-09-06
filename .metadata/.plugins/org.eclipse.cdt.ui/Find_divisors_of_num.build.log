@@ -1,0 +1,7 @@
+21:56:29 **** Incremental Build of configuration Debug for project Find_divisors_of_num ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Find_divisors_of_num.o" "..\\src\\Find_divisors_of_num.c" 
+gcc -o Find_divisors_of_num.exe "src\\Find_divisors_of_num.o" 
+
+21:56:29 Build Finished (took 675ms)
+

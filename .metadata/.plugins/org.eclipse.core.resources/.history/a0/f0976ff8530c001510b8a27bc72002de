@@ -1,0 +1,255 @@
+/*
+ ============================================================================
+ Name        : Huffman_coding_bhav.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node{
+	char Data;
+	char Symbol[10];
+	unsigned int Freq;
+	struct Node* Left;
+	struct Node* Right;
+	struct Node* Next;
+};
+
+
+#define STACK_QUE_SIZE 50
+struct Node* Queue[STACK_QUE_SIZE];
+int QCount = 0 ;
+int QFront = 0;
+int QEnd = 0;
+
+void QueuePush(struct Node * tempNode)
+{
+	if (QCount >= STACK_QUE_SIZE)
+	{
+		//		printf("The queue is full\n");
+	}
+	else
+	{
+		Queue[QEnd++] = tempNode;
+		++QCount;
+		if (QEnd >= STACK_QUE_SIZE) QEnd = 0;
+	}
+}
+
+struct Node* QueuePop(void)
+{
+	struct Node *tmp = NULL;
+	if (QCount <= 0)
+	{
+		//		printf("Error: You are trying to delete from a empty stack");
+	}
+	else
+	{
+		QCount--;
+		tmp = Queue[QFront++];
+		if (QFront >= STACK_QUE_SIZE) QFront = 0;
+	}
+	return tmp;
+}
+
+void print_huffman_tree_TopToBottom(struct Node *head)
+{
+//	Queue topBottom;
+	char currentSymbol1[10];
+	char currentSymbol2[10];
+	char* symbol1 = currentSymbol1;
+	char* symbol2 = currentSymbol2;
+	char* symbol;
+	int i;
+	while(head)
+	{
+		//printf("%c, %d, %s\n",head->Data, head->Freq, head->Symbol);
+		while((head->Left))
+		{
+			if (head->Left)
+			{
+				currentSymbol1[i] = '1';
+				printf("%c, %d, %s\n",head->Left->Data, head->Left->Freq, symbol);
+				QueuePush(head->Left);
+
+			}
+			if (head->Right)
+			{
+				currentSymbol2[i] = '0';
+				//*(head->Right->Symbol) = *symbol;
+				printf("%c, %d, %s\n",head->Right->Data, head->Right->Freq, symbol);
+				QueuePush(head->Right);
+			}
+
+			head = QueuePop();
+			++i;
+			symbol = (QCount % 2 ==1)?symbol1:symbol2;
+			//printf("%c, %d, %s\n",head->Data, head->Freq, head->Symbol);
+		}
+
+		head= QueuePop();
+		//currentSymbol[i] = head->Symbol[i];
+		//currentSymbol[j] = head->Symbol[j];
+
+	}
+}
+
+void print_huffman_tree(struct Node *head, char *string, int size)
+{
+	if (head->Symbol != '')
+	{
+		printf("%c: %s\n", head->Symbol, string);
+	}
+	if (head->Left)
+	{
+		string[size] = '0';
+		string[size+1] = '\0';
+		print_huffman_tree(head->Left, string, size++);
+	}
+	if (head->Right)
+	{
+		string[size] = '1';
+		string[size+1] = '\0';
+		print_huffman_tree(head->Right, string, size++);
+	}
+}
+
+void Insert_LL(struct Node** head, struct Node *Newnode)
+{
+	struct Node* current = *head;
+	struct Node* prev = NULL;
+
+
+	if ((*head == NULL)||(Newnode-> Freq < (*head)-> Freq))
+	{
+		*head = Newnode;
+		Newnode->Next = current;
+	}
+	else
+	{
+		while ((current != NULL) && (current->Freq < Newnode->Freq))
+		{
+			prev = current;
+			current = current->Next;
+		}
+		prev->Next = Newnode;
+		Newnode->Next = current;
+	}
+}
+
+struct Node* Build_tree(struct Node** head, struct Node* Newnode1, struct Node* Newnode2)
+{
+	int i;
+	struct Node* Newnode = (struct Node*)malloc(sizeof(struct Node));
+	Newnode->Data = '0';
+	Newnode->Freq = (Newnode1->Freq) + (Newnode2->Freq);
+	for( i =0; i< 10; i++)
+	{
+		Newnode->Symbol[i] = ' ';
+	}
+	Newnode->Left = Newnode1;
+	Newnode->Right = Newnode2;
+	return Newnode;
+}
+
+
+
+struct Node* create_huffman_tree(struct Node* head)
+{
+	struct Node* current = head;
+//	struct Node* prev = head;
+	struct Node* temp_node = NULL;
+	while((current != NULL) && (current->Next != NULL))
+	{
+		temp_node = Build_tree(NULL, current, current->Next);
+		current = current->Next->Next;
+		Insert_LL(&head, temp_node);
+	}
+
+	char string[10] = {'\0'};
+	print_huffman_tree(temp_node, string, 0);
+//	print_huffman_tree_TopToBottom(temp_node);
+	return temp_node;
+}
+
+
+int main(void)
+{
+    int i;
+	struct Node* node06 = (struct Node *)malloc(sizeof(struct Node));
+	node06->Freq = 45;
+	for( i =0; i< 10; i++)
+	{
+	node06->Symbol[i] = ' ';
+	}
+	node06->Data = 'f';
+	node06->Next = NULL;
+	node06->Left = NULL;
+	node06->Right = NULL;
+
+	struct Node* node05 = (struct Node *)malloc(sizeof(struct Node));
+	node05->Freq = 20;
+	for( i =0; i< 10; i++)
+	{
+	node05->Symbol[i] = ' ';
+	}
+	node05->Data = 'e';
+	node05->Next = node06;
+	node05->Left = NULL;
+	node05->Right = NULL;
+
+	struct Node* node04 = (struct Node *)malloc(sizeof(struct Node));
+	node04->Freq = 15;
+	for( i =0; i< 10; i++)
+	{
+	node04->Symbol[i] = ' ';
+	}
+	node04->Data = 'd';
+	node04->Next = node05;
+	node04->Left = NULL;
+	node04->Right = NULL;
+
+	struct Node* node03 = (struct Node *)malloc(sizeof(struct Node));
+	node03->Freq = 10;
+	for( i =0; i< 10; i++)
+	{
+	node03->Symbol[i] = ' ';
+	}
+	node03->Data = 'c';
+	node03->Next = node04;
+	node03->Left = NULL;
+	node03->Right = NULL;
+
+	struct Node* node02 = (struct Node *)malloc(sizeof(struct Node));
+	node02->Freq = 7;
+	for( i =0; i< 10; i++)
+	{
+	node02->Symbol[i] = ' ';
+	}
+	node02->Data = 'b';
+	node02->Next = node03;
+	node02->Left = NULL;
+	node02->Right = NULL;
+
+	struct Node* node01 = (struct Node *)malloc(sizeof(struct Node));
+	node01->Freq = 5;
+	for( i =0; i< 10; i++)
+	{
+	node01->Symbol[i] = ' ';
+	}
+	node01->Data = 'a';
+	node01->Next = node02;
+	node01->Left = NULL;
+	node01->Right = NULL;
+
+//	struct Node* head = node01;
+
+	create_huffman_tree(node01);
+
+	return 0;
+}

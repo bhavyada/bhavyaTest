@@ -1,0 +1,7 @@
+20:02:02 **** Incremental Build of configuration Debug for project trial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\trial.o" "..\\src\\trial.c" 
+gcc -o trial.exe "src\\trial.o" 
+
+20:02:02 Build Finished (took 438ms)
+

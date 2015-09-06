@@ -1,0 +1,61 @@
+/*
+ ============================================================================
+ Name        : Reverse_words_not_characters.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void reverse_word(char* string, int strlength)
+{
+	int c;
+	int start = 0;
+	int end = strlength - 1;
+	char temp;
+	for (c=0; c < strlength/2 ; c++)
+	{
+		temp = string[end];
+		string[end] = string[start];
+		string[start] = temp;
+		start++;
+		end--;
+	}
+}
+
+void reverse(char* string)
+{
+	int front, end = 0;
+	int strlength;
+
+	while(1)
+	{
+		//if it reaches the end of the word it must reverse it
+		if (*(string + end) == ' ')
+		{
+			strlength = end - front;
+			reverse_word(string, strlength);
+			front = end + 1;
+		}
+		else if (*(string + end) == '\0')
+		{
+			break;
+		}
+		end++;
+	}
+}
+
+
+int main(void)
+{
+	char string[100] = "Bhavya is good";
+	reverse_word(string,14);
+	printf("The reversed string is: %s\n",string);
+	reverse(string);
+	printf("The reversed words are: %s\n",string);
+	return 0;
+}

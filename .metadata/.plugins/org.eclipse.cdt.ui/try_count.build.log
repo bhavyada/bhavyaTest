@@ -1,0 +1,7 @@
+14:35:43 **** Incremental Build of configuration Debug for project try_count ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\try_count.o" "..\\src\\try_count.c" 
+gcc -o try_count.exe "src\\try_count.o" 
+
+14:35:43 Build Finished (took 342ms)
+

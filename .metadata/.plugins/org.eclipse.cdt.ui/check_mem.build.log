@@ -1,0 +1,20 @@
+20:01:16 **** Incremental Build of configuration Debug for project check_mem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\check_mem.o" "..\\src\\check_mem.c" 
+..\src\check_mem.c: In function 'main':
+..\src\check_mem.c:15:21: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+  unsigned int *N1 = (int*)calloc(1,4);
+                     ^
+..\src\check_mem.c:18:2: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'unsigned int *' [-Wformat=]
+  printf("0x%x,%d", N1,*N1);
+  ^
+..\src\check_mem.c:20:2: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'unsigned int *' [-Wformat=]
+  printf("0x%x.%d", N1, *N1);
+  ^
+..\src\check_mem.c:21:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -o check_mem.exe "src\\check_mem.o" 
+
+20:01:16 Build Finished (took 239ms)
+

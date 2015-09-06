@@ -1,0 +1,256 @@
+//============================================================================
+// Name        : BinaryTree.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Binary Tree
+//============================================================================
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#define STACK_QUE_SIZE 50
+
+class Node
+{
+public:
+	int V;
+	Node* L;
+	Node* R;
+	Node(int val, Node* left, Node* right) : V(val), L(left), R(right){}
+};
+
+class Stack
+{
+public:
+	Stack(void): Count(0){}
+	void StackPush(Node *tempNode);
+	Node *StackPop(void);
+
+private:
+	Node *StackArr[STACK_QUE_SIZE];
+	int Count;
+};
+
+void Stack::StackPush(Node *tempNode)
+{
+	if (Count >= STACK_QUE_SIZE)
+	{
+		//		printf("Error:maximum size reached");
+	}
+	else
+	{
+		StackArr[Count++] = tempNode;
+	}
+}
+
+Node* Stack::StackPop(void)
+{
+	Node* tmp = NULL;
+	if (Count <= 0)
+	{
+		//		printf("The stack is empty");
+
+	}
+	else
+	{
+		tmp = StackArr[--Count];
+	}
+	return tmp;
+}
+
+
+
+class Queue
+{
+public:
+	Queue(void): Count(0), Front(0), End(0) {}
+	void QueuePush(Node *tempNode);
+	Node *QueuePop(void);
+
+private:
+	Node *QueueArr[STACK_QUE_SIZE];
+	int Count;
+	int Front;
+	int End;
+};
+
+void Queue::QueuePush(Node * tempNode)
+{
+	if (Count >= STACK_QUE_SIZE)
+	{
+		//		printf("The queue is full\n");
+	}
+	else
+	{
+		QueueArr[End++] = tempNode;
+		++Count;
+		if (End >= STACK_QUE_SIZE) End = 0;
+	}
+}
+
+Node* Queue::QueuePop(void)
+{
+	Node *tmp = NULL;
+	if (Count <= 0)
+	{
+		//		printf("Error: You are trying to delete from a empty stack");
+	}
+	else
+	{
+		Count--;
+		tmp = QueueArr[Front++];
+		if (Front >= STACK_QUE_SIZE) Front = 0;
+	}
+	return tmp;
+}
+
+
+void DepthFirst(Node *tempNode)
+{
+	Stack depthStack;
+
+
+	while(tempNode)
+	{
+		printf("%d ", tempNode->V);
+		if (tempNode->L)
+		{
+			if (tempNode->R)
+			{
+				depthStack.StackPush(tempNode->R);
+			}
+			tempNode = tempNode->L;
+		}
+		else if (tempNode->R)
+		{
+			tempNode = tempNode->R;
+		}
+		else tempNode = depthStack.StackPop();
+	}
+
+}
+
+void TopToBottom(Node *tempNode)
+{
+	Queue topBottom;
+	while(tempNode)
+	{
+		printf("%d ",tempNode->V);
+		if (tempNode->L)
+		{
+			topBottom.QueuePush(tempNode->L);
+		}
+		if (tempNode->R)
+		{
+			topBottom.QueuePush(tempNode->R);
+		}
+		tempNode = topBottom.QueuePop();
+
+	}
+}
+
+void BottomToTop(Node* tempNode)
+{
+	Queue bottomTopQ;
+	Stack bottomTopS;
+
+	while(tempNode)
+	{
+		if (tempNode->R)
+		{
+			bottomTopQ.QueuePush(tempNode->R);
+		}
+		if (tempNode->L)
+		{
+			bottomTopQ.QueuePush(tempNode->L);
+		}
+		bottomTopS.StackPush(tempNode);
+
+		tempNode = bottomTopQ.QueuePop();
+	}
+
+	tempNode = bottomTopS.StackPop();
+	while (tempNode)
+	{
+		printf("%d ",tempNode->V);
+		tempNode = bottomTopS.StackPop();
+	}
+}
+
+void IncreasingOrder (Node *head)
+{
+	Stack incrStack;
+	while (head)
+	{
+		while (head->L)
+		{
+			incrStack.StackPush(head);
+			head = head->L;
+
+		}
+		printf("%d ", head->V);
+	    while ((!(head->R)) && head)
+	    {
+	    	head = incrStack.StackPop();
+			printf("%d ", head->V);
+	    }
+//	    if (head->R)
+	    head = head->R;
+	}
+}
+
+/********************************************************
+									8
+				4										17
+		3				7					10						25
+				      6								12
+				   5     6
+				5
+			  5
+ *********************************************************/
+
+int main()
+{
+	Node *node5a = new Node(5, NULL, NULL);
+	Node *node5b = new Node(5, node5a, NULL);
+	Node *node5 = new Node(5, node5b, NULL);
+	Node *node6s = new Node(6, NULL, NULL);
+	Node *node6 = new Node(6, node5, node6s);
+	Node *node7 = new Node(7, node6, NULL);
+	Node *node3 = new Node(3, NULL, NULL);
+	Node *node4 = new Node(4, node3, node7);
+	Node *node12= new Node(12, NULL, NULL);
+	Node *node10= new Node(10, NULL, node12);
+	Node *node25= new Node(25, NULL, NULL);
+	Node *node17= new Node(17, node10, node25);
+	Node *node8 = new Node(8, node4, node17);
+
+	printf("\n\nDepthFirst\n");
+	DepthFirst(node8);
+
+	printf("\n\nTopToBottom\n");
+	TopToBottom(node8);
+
+	printf("\n\nBottomToTop\n");
+	BottomToTop(node8);
+
+	printf("\n\nIncreasing Order\n");
+	IncreasingOrder (node8);
+
+	//	printf("\n\n");
+	//	printf("TopFirst\n");
+	//	TopToBottom(node8);
+	//
+	//	printf("\n\n");
+	//	printf("BottomFirst\n");
+	//	BottomToTop(node8);
+	//
+	//	printf("\n\n");
+	//	printf("BinaryTreeMirror\n");
+	//	BinaryTreeMirror(node8);
+	//	printf("\n");
+	//	BinaryTreeMirror(node8);
+
+	return 0;
+}

@@ -1,0 +1,13 @@
+13:32:58 **** Rebuild of configuration Debug for project Random Number ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Random Number.o" "..\\src\\Random Number.cpp" 
+..\src\Random Number.cpp: In function 'int random(int, int)':
+..\src\Random Number.cpp:20:38: error: 'zero_one_random' was not declared in this scope
+    res = (res << 1)| zero_one_random();
+                                      ^
+..\src\Random Number.cpp:24:2: error: expected ';' before 'return'
+  return res + a;
+  ^
+
+13:32:59 Build Finished (took 1s.317ms)
+

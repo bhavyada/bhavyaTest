@@ -1,0 +1,7 @@
+15:01:51 **** Incremental Build of configuration Debug for project Get_parity ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Get_parity.o" "..\\src\\Get_parity.c" 
+gcc -o Get_parity.exe "src\\Get_parity.o" 
+
+15:01:51 Build Finished (took 325ms)
+

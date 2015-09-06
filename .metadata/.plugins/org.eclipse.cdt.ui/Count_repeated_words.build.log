@@ -1,0 +1,7 @@
+09:32:03 **** Rebuild of configuration Debug for project Count_repeated_words ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Count_repeated_words.o" "..\\src\\Count_repeated_words.cpp" 
+g++ -o Count_repeated_words.exe "src\\Count_repeated_words.o" 
+
+09:32:07 Build Finished (took 3s.293ms)
+

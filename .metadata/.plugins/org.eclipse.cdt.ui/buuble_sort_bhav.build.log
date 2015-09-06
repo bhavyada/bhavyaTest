@@ -1,0 +1,42 @@
+23:47:58 **** Incremental Build of configuration Debug for project buuble_sort_bhav ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\buuble_sort_bhav.o" "..\\src\\buuble_sort_bhav.c" 
+..\src\buuble_sort_bhav.c: In function 'Insert':
+..\src\buuble_sort_bhav.c:24:29: error: incompatible types when initializing type 'struct bucket *' using type 'struct bucket'
+    struct bucket *current = Buckets->values[i];
+                             ^
+..\src\buuble_sort_bhav.c:25:33: error: invalid operands to binary == (have 'struct bucket' and 'int')
+    if (Buckets->values[buc_num] == 0)
+                                 ^
+..\src\buuble_sort_bhav.c:27:12: error: request for member 'data' in something not a structure or union
+     Buckets.data[buc_num] = a;
+            ^
+..\src\buuble_sort_bhav.c:29:19: error: request for member 'data' in something not a structure or union
+    else if(Buckets.data[buc_num] < a)
+                   ^
+..\src\buuble_sort_bhav.c:31:66: error: invalid initializer
+     struct bucket newvalue= (struct bucket*)malloc(sizeof(struct bucket));
+                                                                  ^
+..\src\buuble_sort_bhav.c:32:13: error: invalid type argument of '->' (have 'struct bucket')
+     newvalue->data = a;
+             ^
+..\src\buuble_sort_bhav.c:33:21: error: incompatible types when assigning to type 'struct bucket *' from type 'struct bucket'
+     Buckets->values = newvalue;
+                     ^
+..\src\buuble_sort_bhav.c: In function 'bucket_sort':
+..\src\buuble_sort_bhav.c:41:10: warning: unused variable 'k' [-Wunused-variable]
+  int i,j,k;
+          ^
+..\src\buuble_sort_bhav.c:41:8: warning: unused variable 'j' [-Wunused-variable]
+  int i,j,k;
+        ^
+..\src\buuble_sort_bhav.c: In function 'Insert':
+..\src\buuble_sort_bhav.c:68:5: warning: 'main' is normally a non-static function [-Wmain]
+ int main()
+     ^
+..\src\buuble_sort_bhav.c:24:19: warning: unused variable 'current' [-Wunused-variable]
+    struct bucket *current = Buckets->values[i];
+                   ^
+
+23:47:58 Build Finished (took 121ms)
+

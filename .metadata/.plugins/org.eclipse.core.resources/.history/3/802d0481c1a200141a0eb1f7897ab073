@@ -1,0 +1,38 @@
+/*
+ ============================================================================
+ Name        : Get_parity.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+# include <stdio.h>
+# define  bool int
+
+/* Function to get parity of number n. It returns 1
+   if n has odd parity, and returns 0 if n has even
+   parity */
+bool getParity(unsigned int x)
+{
+	//unsigned x1, x2;
+    bool parity = 0;
+    while (x)
+    {
+        parity = parity ^ (x&1);
+        x = x>>1;
+    }
+    return parity;
+}
+
+/* Driver program to test getParity() */
+int main()
+{
+    unsigned int x = 8;
+    printf("Parity of no %d = %s",  x,
+             (getParity(x)? "odd": "even"));
+
+    getchar();
+    return 0;
+}

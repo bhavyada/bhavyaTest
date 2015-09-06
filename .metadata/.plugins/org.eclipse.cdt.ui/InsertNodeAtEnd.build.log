@@ -1,0 +1,39 @@
+16:21:00 **** Incremental Build of configuration Debug for project InsertNodeAtEnd ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\InsertNodeAtEnd.o" "..\\src\\InsertNodeAtEnd.c" 
+..\src\InsertNodeAtEnd.c:15:26: warning: 'struct node' declared inside parameter list
+ void InsertAtEnd (struct node** headref, int value)
+                          ^
+..\src\InsertNodeAtEnd.c:15:26: warning: its scope is only this definition or declaration, which is probably not what you want
+..\src\InsertNodeAtEnd.c: In function 'InsertAtEnd':
+..\src\InsertNodeAtEnd.c:25:21: error: dereferencing pointer to incomplete type
+   current = current ->next;
+                     ^
+..\src\InsertNodeAtEnd.c:18:15: warning: variable 'tail' set but not used [-Wunused-but-set-variable]
+  struct node* tail;
+               ^
+..\src\InsertNodeAtEnd.c: In function 'main':
+..\src\InsertNodeAtEnd.c:33:2: warning: passing argument 1 of 'InsertAtEnd' from incompatible pointer type
+  InsertAtEnd(&head, 3);
+  ^
+..\src\InsertNodeAtEnd.c:15:6: note: expected 'struct node **' but argument is of type 'struct node **'
+ void InsertAtEnd (struct node** headref, int value)
+      ^
+..\src\InsertNodeAtEnd.c:34:2: warning: passing argument 1 of 'InsertAtEnd' from incompatible pointer type
+  InsertAtEnd(&head, 5);
+  ^
+..\src\InsertNodeAtEnd.c:15:6: note: expected 'struct node **' but argument is of type 'struct node **'
+ void InsertAtEnd (struct node** headref, int value)
+      ^
+..\src\InsertNodeAtEnd.c:35:2: warning: passing argument 1 of 'InsertAtEnd' from incompatible pointer type
+  InsertAtEnd(&head, 6);
+  ^
+..\src\InsertNodeAtEnd.c:15:6: note: expected 'struct node **' but argument is of type 'struct node **'
+ void InsertAtEnd (struct node** headref, int value)
+      ^
+..\src\InsertNodeAtEnd.c:37:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+
+16:21:02 Build Finished (took 1s.756ms)
+

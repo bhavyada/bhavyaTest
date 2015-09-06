@@ -1,0 +1,7 @@
+16:37:51 **** Rebuild of configuration Debug for project Array_of_even_numbers ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Array_of_even_numbers.o" "..\\src\\Array_of_even_numbers.c" 
+gcc -o Array_of_even_numbers.exe "src\\Array_of_even_numbers.o" 
+
+16:37:51 Build Finished (took 364ms)
+

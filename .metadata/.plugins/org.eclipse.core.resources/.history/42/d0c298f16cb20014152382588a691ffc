@@ -1,0 +1,24 @@
+//============================================================================
+// Name        : Index_same_as_value.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int ArrIndexValueSame(int *arr, int size)
+{
+	int index = -1;
+	return index;
+}
+
+int main()
+{
+	int myArr[] = {-5, -1, 0, 2, 2, 5, 6};
+	printf("Array Index value find\n");
+	printf("Index and value same at %d", ArrIndexValueSame(myArr, sizeof(myArr[])/sizeof(int)));
+	return 0;
+}

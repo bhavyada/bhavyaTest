@@ -1,0 +1,24 @@
+15:38:49 **** Incremental Build of configuration Debug for project InsertNodeAtBeginning ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\InsertNodeAtBeginning.o" "..\\src\\InsertNodeAtBeginning.c" 
+..\src\InsertNodeAtBeginning.c: In function 'Insert':
+..\src\InsertNodeAtBeginning.c:22:16: warning: assignment from incompatible pointer type
+  newnode->next = headref ;
+                ^
+..\src\InsertNodeAtBeginning.c:23:10: warning: assignment from incompatible pointer type
+  headref = newnode;
+          ^
+..\src\InsertNodeAtBeginning.c: In function 'main':
+..\src\InsertNodeAtBeginning.c:31:2: error: 'print' undeclared (first use in this function)
+  print
+  ^
+..\src\InsertNodeAtBeginning.c:31:2: note: each undeclared identifier is reported only once for each function it appears in
+..\src\InsertNodeAtBeginning.c:32:1: error: expected ';' before '}' token
+ }
+ ^
+..\src\InsertNodeAtBeginning.c:32:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+
+15:38:49 Build Finished (took 184ms)
+

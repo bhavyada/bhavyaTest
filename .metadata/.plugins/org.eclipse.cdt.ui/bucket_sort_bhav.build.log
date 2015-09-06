@@ -1,0 +1,60 @@
+17:55:01 **** Incremental Build of configuration Debug for project bucket_sort_bhav ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\bucket_sort_bhav.o" "..\\src\\bucket_sort_bhav.c" 
+..\src\bucket_sort_bhav.c: In function 'Insert':
+..\src\bucket_sort_bhav.c:40:14: warning: assignment from incompatible pointer type
+   current[i] = bucket_array[i];
+              ^
+..\src\bucket_sort_bhav.c:43:20: error: 'buc_num' undeclared (first use in this function)
+  if ((bucket_array[buc_num] == NULL) || (new_value-> data < bucket_array[buc_num]->data))
+                    ^
+..\src\bucket_sort_bhav.c:43:20: note: each undeclared identifier is reported only once for each function it appears in
+..\src\bucket_sort_bhav.c:34:17: warning: variable 'prev' set but not used [-Wunused-but-set-variable]
+  struct bucket* prev[5];
+                 ^
+..\src\bucket_sort_bhav.c:33:17: warning: variable 'current' set but not used [-Wunused-but-set-variable]
+  struct bucket* current[5];
+                 ^
+..\src\bucket_sort_bhav.c: In function 'bucket_sort':
+..\src\bucket_sort_bhav.c:73:4: warning: passing argument 1 of 'Insert' from incompatible pointer type
+    Insert(&a,array[i]);
+    ^
+..\src\bucket_sort_bhav.c:29:6: note: expected 'int ***' but argument is of type 'struct bucket **'
+ void Insert(int **bucket_array[], int val)
+      ^
+..\src\bucket_sort_bhav.c:77:4: warning: passing argument 1 of 'Insert' from incompatible pointer type
+    Insert(&b, array[i]);
+    ^
+..\src\bucket_sort_bhav.c:29:6: note: expected 'int ***' but argument is of type 'struct bucket **'
+ void Insert(int **bucket_array[], int val)
+      ^
+..\src\bucket_sort_bhav.c:81:4: warning: passing argument 1 of 'Insert' from incompatible pointer type
+    Insert(&c, array[i]);
+    ^
+..\src\bucket_sort_bhav.c:29:6: note: expected 'int ***' but argument is of type 'struct bucket **'
+ void Insert(int **bucket_array[], int val)
+      ^
+..\src\bucket_sort_bhav.c:85:4: warning: passing argument 1 of 'Insert' from incompatible pointer type
+    Insert(&d, array[i]);
+    ^
+..\src\bucket_sort_bhav.c:29:6: note: expected 'int ***' but argument is of type 'struct bucket **'
+ void Insert(int **bucket_array[], int val)
+      ^
+..\src\bucket_sort_bhav.c:89:4: warning: passing argument 1 of 'Insert' from incompatible pointer type
+    Insert(&e, array[i]);
+    ^
+..\src\bucket_sort_bhav.c:29:6: note: expected 'int ***' but argument is of type 'struct bucket **'
+ void Insert(int **bucket_array[], int val)
+      ^
+..\src\bucket_sort_bhav.c:94:18: error: 'bucket_array' undeclared (first use in this function)
+   for( current = bucket_array[i]; current != NULL; current = current ->values)
+                  ^
+..\src\bucket_sort_bhav.c:96:17: warning: assignment makes pointer from integer without a cast
+    out_arr[i++] = current->data;
+                 ^
+..\src\bucket_sort_bhav.c:66:17: warning: variable 'out_arr' set but not used [-Wunused-but-set-variable]
+  struct bucket* out_arr[10];
+                 ^
+
+17:55:01 Build Finished (took 130ms)
+

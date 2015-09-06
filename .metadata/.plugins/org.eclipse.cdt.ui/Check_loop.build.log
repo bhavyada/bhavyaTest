@@ -1,0 +1,7 @@
+15:38:43 **** Incremental Build of configuration Debug for project Check_loop ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Check_loop.o" "..\\src\\Check_loop.cpp" 
+g++ -o Check_loop.exe "src\\Check_loop.o" 
+
+15:38:44 Build Finished (took 922ms)
+

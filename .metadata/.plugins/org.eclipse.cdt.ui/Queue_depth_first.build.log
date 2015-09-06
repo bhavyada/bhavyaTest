@@ -1,0 +1,8 @@
+15:38:51 **** Incremental Build of configuration Debug for project Queue_depth_first ****
+Info: Internal Builder is used for build
+g++ -o Queue_depth_first.exe "src\\Queue_depth_first.o" 
+C:/SoftwareInstalls/gcc/x86_64-w64-mingw32/lib/../lib/libmingw32.a(lib64_libmingw32_a-crt0_c.o):crt0_c.c:(.text+0x46): undefined reference to `WinMain'
+collect2.exe: error: ld returned 1 exit status
+
+15:38:51 Build Finished (took 326ms)
+

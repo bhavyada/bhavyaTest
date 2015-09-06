@@ -1,0 +1,39 @@
+15:38:52 **** Incremental Build of configuration Debug for project Reverse_string_not_word ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Reverse_string_not_word.o" "..\\src\\Reverse_string_not_word.c" 
+..\src\Reverse_string_not_word.c: In function 'main':
+..\src\Reverse_string_not_word.c:22:2: warning: implicit declaration of function 'reverse_only_words' [-Wimplicit-function-declaration]
+  reverse_only_words(string);
+  ^
+..\src\Reverse_string_not_word.c: At top level:
+..\src\Reverse_string_not_word.c:63:6: warning: conflicting types for 'reverse_only_words'
+ void reverse_only_words(char * string)
+      ^
+..\src\Reverse_string_not_word.c:22:2: note: previous implicit declaration of 'reverse_only_words' was here
+  reverse_only_words(string);
+  ^
+..\src\Reverse_string_not_word.c: In function 'reverse_only_words':
+..\src\Reverse_string_not_word.c:68:22: error: empty character constant
+   if (string[i+1] != '')
+                      ^
+..\src\Reverse_string_not_word.c:71:16: warning: initialization makes pointer from integer without a cast
+    char* end = string[i];
+                ^
+..\src\Reverse_string_not_word.c: At top level:
+..\src\Reverse_string_not_word.c:97:23: error: expected declaration specifiers or '...' before '*' token
+ reverse_entire_string(*string)
+                       ^
+..\src\Reverse_string_not_word.c:127:1: warning: return type defaults to 'int' [-Wreturn-type]
+ reverse(char *start, char *end)
+ ^
+..\src\Reverse_string_not_word.c:127:1: error: conflicting types for 'reverse'
+..\src\Reverse_string_not_word.c:27:6: note: previous definition of 'reverse' was here
+ void reverse(char * string)
+      ^
+..\src\Reverse_string_not_word.c: In function 'reverse':
+..\src\Reverse_string_not_word.c:135:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+
+15:38:52 Build Finished (took 230ms)
+

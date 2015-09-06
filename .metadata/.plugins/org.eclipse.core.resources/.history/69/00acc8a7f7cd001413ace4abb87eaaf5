@@ -1,0 +1,73 @@
+//============================================================================
+// Name        : FindHalfWordInLinkedList.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Given a Linked List, find the first element whose first or second half matches the search term
+//============================================================================
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node
+{
+	unsigned int Value;
+	Node *Next;
+};
+
+class LinkedList
+{
+public:
+	int FindHalfWord(unsigned int x);
+	void Insert(struct Node** head, unsigned int x);
+
+};
+
+//int LinkList::FindHalfWord(unsigned int x)
+//{
+
+//}
+
+void LinkList::Insert(struct Node** head, unsigned int x)
+{
+	struct Node* current = *head;
+	struct Node* prev = NULL;
+
+	struct Node* newnode = (struct Node*)malloc(sizeof(struct Node));
+	newnode-> Value = value;
+
+	if (*head == NULL)
+	{
+		*head = newnode;
+		newnode-> Next = NULL;
+	}
+	else
+	{
+		while ((current != NULL) && (current-> Value < newnode-> Value))
+		{
+			prev = current;
+			current = current->Next;
+		}
+		prev->Next = newnode;
+		newnode->Next = current;
+	}
+
+}
+
+
+int main()
+{
+	LinkedList ll;
+	ll.Insert(0x356AF);
+	ll.Insert(0x375526BF);
+	ll.Insert(0x12345678);
+	ll.Insert(0x4321F01);
+	ll.Insert(0x1A2B3C4D);
+	ll.Insert(0x00000000);
+	ll.Insert(0x67391DE2);
+	ll.Insert(0x87654321);
+
+	unsigned int halfword = 0x4321;
+	printf("found halfword: %d at node: %d", halfword, ll.FindHalfWord(halfword));
+	return 0;
+}

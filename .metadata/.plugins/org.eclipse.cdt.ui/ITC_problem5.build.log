@@ -1,0 +1,6 @@
+22:36:26 **** Incremental Build of configuration Default for project ITC_problem5 ****
+make all 
+make: *** No rule to make target `all'.  Stop.
+
+22:36:26 Build Finished (took 87ms)
+

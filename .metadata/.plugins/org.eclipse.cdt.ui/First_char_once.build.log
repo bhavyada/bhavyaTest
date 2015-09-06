@@ -1,0 +1,36 @@
+16:42:20 **** Rebuild of configuration Debug for project First_char_once ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\First_char_once.o" "..\\src\\First_char_once.c" 
+..\src\First_char_once.c: In function 'FirstNotRepeatingChar':
+..\src\First_char_once.c:17:17: warning: multi-character character constant [-Wmultichar]
+         return ('/0');
+                 ^
+..\src\First_char_once.c:17:9: warning: overflow in implicit constant conversion [-Woverflow]
+         return ('/0');
+         ^
+..\src\First_char_once.c:21:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(unsigned int i = 0; i<tableSize; ++ i)
+     ^
+..\src\First_char_once.c:21:5: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+..\src\First_char_once.c:26:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+         hashTable[*(pHashKey++)] ++;
+         ^
+..\src\First_char_once.c:31:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+         if(hashTable[*pHashKey] == 1)
+         ^
+..\src\First_char_once.c: In function 'main':
+..\src\First_char_once.c:40:2: error: invalid initializer
+  char* string1[] = "aabccdeffegghijii";
+  ^
+..\src\First_char_once.c:41:2: warning: passing argument 1 of 'FirstNotRepeatingChar' from incompatible pointer type
+  FirstNotRepeatingChar(string1);
+  ^
+..\src\First_char_once.c:14:6: note: expected 'char *' but argument is of type 'char **'
+ char FirstNotRepeatingChar(char* pString)
+      ^
+..\src\First_char_once.c:42:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+
+16:42:20 Build Finished (took 125ms)
+

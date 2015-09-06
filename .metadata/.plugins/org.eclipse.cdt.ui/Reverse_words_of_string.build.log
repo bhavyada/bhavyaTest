@@ -1,0 +1,7 @@
+00:34:11 **** Incremental Build of configuration Debug for project Reverse_words_of_string ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Reverse_words_of_string.o" "..\\src\\Reverse_words_of_string.cpp" 
+g++ -o Reverse_words_of_string.exe "src\\Reverse_words_of_string.o" 
+
+00:34:12 Build Finished (took 318ms)
+

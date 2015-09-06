@@ -1,0 +1,7 @@
+23:16:41 **** Incremental Build of configuration Debug for project revrse_linked_list_testing ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\revrse_linked_list_testing.o" "..\\src\\revrse_linked_list_testing.cpp" 
+g++ -o revrse_linked_list_testing.exe "src\\revrse_linked_list_testing.o" 
+
+23:16:44 Build Finished (took 3s.410ms)
+

@@ -1,0 +1,7 @@
+23:26:28 **** Incremental Build of configuration Debug for project Three_stacks_one_array ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Three_stacks_one_array.o" "..\\src\\Three_stacks_one_array.c" 
+gcc -o Three_stacks_one_array.exe "src\\Three_stacks_one_array.o" 
+
+23:26:28 Build Finished (took 351ms)
+

@@ -1,0 +1,63 @@
+/*
+ ============================================================================
+ Name        : ssn_valid.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+
+// This program checks whether the SSN is valid or not. The conditions for valid are:
+//a) It should be of 5 digits.
+//b) The middle digit should be even.
+//c) The 2nd and 4th digit should be odd.
+//d) 1st digit should not be zero.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void my_atoi( const char *string, int *num_arr)
+{
+
+	int i = 0;
+	while (string[i] != '\0')
+	{
+		if ((string[i] >= '0') && (string[i] <= '9'))
+		{
+
+			num_arr[i] = string[i] - '0';
+		}
+		else
+		{
+			printf("error");
+			return;
+		}
+		++i;
+	}
+
+}
+
+int main(void) {
+	printf("Enter you SSN\n");
+
+	int i;
+	const char array[] = "14879";
+	const int arr_size = sizeof(array);
+	int num_arr[arr_size];
+	my_atoi(array, num_arr);
+	for (i=0; i<5; i++)
+	{
+		printf("%d",num_arr[i]);
+	}
+	if ((num_arr[2] % 2 != 0)||((num_arr[1] && num_arr[3]) % 2 == 0)||(num_arr[0] == 0))
+	{
+		printf("\n The SSN number is invalid");
+	}
+	else
+	{
+		printf("\n Your SSN is valid");
+	}
+	return 0;
+}
